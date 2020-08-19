@@ -1,0 +1,14 @@
+class Solution {
+public:
+    int maxSatisfaction(vector<int>& s) {
+    	sort(s.begin(),s.end());
+	int abhitk = 0, ans = 0;
+	for(int i=s.size()-1; i>=0 ; i--){
+		if(s[i]+abhitk<0)break;
+        abhitk += s[i];
+		ans += abhitk;
+	}
+	return ans;
+}      
+    
+};
